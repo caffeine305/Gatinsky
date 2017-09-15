@@ -6,11 +6,7 @@ public class HealthManager : MonoBehaviour {
 
     public int maxHP = 100;
     public int actualHP;
-<<<<<<< HEAD
     public Slider wHealthSlider;
-=======
-    public Slider healthSlider;
->>>>>>> eb06bc6935f3fc5d49a78c8078615a865490b61c
     
 
     public bool isDead;
@@ -21,13 +17,8 @@ public class HealthManager : MonoBehaviour {
         actualHP = maxHP;
         isDead = false;
 
-<<<<<<< HEAD
         wHealthSlider = GameObject.FindWithTag("HUDCanvas").GetComponent<Slider>();
         wHealthSlider.value = actualHP;
-=======
-        healthSlider = GameObject.FindWithTag("HUDCanvas").GetComponent<Slider>();
-        healthSlider.value = actualHP;
->>>>>>> eb06bc6935f3fc5d49a78c8078615a865490b61c
     }
 
     /*
@@ -35,11 +26,7 @@ public class HealthManager : MonoBehaviour {
             if (damaged) // set flash colour
             else //clear transition colour
 
-<<<<<<< HEAD
                 damaged = flase;
-=======
-    damaged = flase;
->>>>>>> eb06bc6935f3fc5d49a78c8078615a865490b61c
     }
     */
       
@@ -67,11 +54,7 @@ public class HealthManager : MonoBehaviour {
 
     public void UpdateHealthBar(int health)
     {
-<<<<<<< HEAD
         wHealthSlider.value = health;
-=======
-        healthSlider.value = health;
->>>>>>> eb06bc6935f3fc5d49a78c8078615a865490b61c
     }
 
 
