@@ -3,36 +3,44 @@ using System.Collections;
 
 public class Movement : MonoBehaviour {
 
-    public float moveSpeed = 10.0f;
-    public float gravity = 9.8f;
+    public float moveSpeed;
     public bool onGround;
     public bool isJumping;
 
     void Start(){
+        moveSpeed = 10.0f;
         onGround = true;
         isJumping = false;
     }
 
     void OnCollisionStay2D(Collision2D col)
     {
-        onGround = true;
-        isJumping = false;
+        if (col.gameObject.name == "Ground")
+        {
+            onGround = true;
+            isJumping = false;
+        }
     }
 
     void FixedUpdate() {
 
+        float velx = Input.GetAxis("Horizontal") * moveSpeed;
 
-        float vel = Input.GetAxis("Horizontal") * moveSpeed; 
-        transform.Translate(Vector2.right * vel * Time.deltaTime);
+        transform.Translate(Vector2.right * velx * Time.deltaTime);
 
         if (Input.GetButton("Fire1")){
 
             if ((onGround == true) && (isJumping == false))
             {
-                transform.Translate(Vector2.up * gravity * Time.deltaTime);
-                isJumping = true;
                 onGround = false;
+                isJumping = true;
             }
+        }
+
+        if (isJumping == true)
+        {
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, moveSpeed), ForceMode2D.Impulse); // ¡ESTA ES UNA FORMA MUY TÉCNICA!
+            isJumping = false;
         }
     }
 
