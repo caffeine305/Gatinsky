@@ -8,6 +8,7 @@ public class OpenCloseCtlr : MonoBehaviour {
 	public bool isOpen;
     public Animator animator; //Declarar Animator para tener acceo a el
     public Collider2D collider; //Declarar Collider para poder modificarlo también
+    public HealthManager healthMan; //Declarar Script para poder accesarlo y saber en que momento se termina la energía de la ventana. 
     Vector2 openOffset = new Vector2 (-0.1651628f, 0.0240237f); //Posición Collider Ventana Abierta
     Vector2 closedOffset = new Vector2 (0.12f, 0.0240237f); //Posición Collider Ventana Cerrada
 
@@ -17,21 +18,19 @@ public class OpenCloseCtlr : MonoBehaviour {
 		//Inicializar Animator y Collider al arrancar el programa
         animator = GetComponentInChildren<Animator>();
         collider = GetComponentInChildren<Collider2D>();
+        healthMan = GetComponentInChildren<HealthManager>();
     }
     
     void OnTriggerEnter2D(Collider2D other)
     {
 		if (other.gameObject.name == "Gatinsky_Big") {
-			animator.SetTrigger ("closes"); //Manda a llamar animación de puerta cerrada
+			animator.SetTrigger ("closes"); //Manda a llamar animación de ventana cerrada
 			collider.offset = closedOffset; //Mueve el collider de acuerdo a la posición "física" de la puerta.
-			isOpen = false;
+			isOpen = false; //Bandera: Ventana cerrada
+            healthMan.isDanger = false; //No hay riesgo de que entren bichos
+            healthMan.actualHP = healthMan.maxHP; //se regenera la energía de la puerta.
 		}
-
-		if (other.gameObject.name == "Invader") {
-			animator.SetTrigger ("opens"); //Manda a llamar animación de puerta cerrada
-			collider.offset = openOffset; //Mueve el collider de acuerdo a la posición "física" de la puerta.
-			isOpen = true;
-		}
+       
 	}
 
 

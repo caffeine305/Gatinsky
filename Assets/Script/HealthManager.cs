@@ -13,7 +13,8 @@ public class HealthManager : MonoBehaviour {
 	public Slider winHealthSlider;
 	OpenCloseCtlr openClose;
 	Vector2 openOffset = new Vector2 (-0.1651628f, 0.0240237f); //Posición Collider Ventana Abierta
-    
+    public bool isDanger;
+
 	//Banderas. Permiten al programa conocer detalles sobre la ventana y así producir una acción a tono
     
     bool damaged;
@@ -22,7 +23,7 @@ public class HealthManager : MonoBehaviour {
     {
 		//Inicializar variables y objetos.
         actualHP = maxHP;
-
+        isDanger = false;
 		health = GameObject.FindGameObjectWithTag("HealthBar");
 
 		GameObject loadHealthSlider = GameObject.FindWithTag("HealthBar");
@@ -82,6 +83,9 @@ public class HealthManager : MonoBehaviour {
     public void Danger()
     {
         //Levantar indicador de ventana abierta que permita generar comportamiento apropiado.
+        Debug.Log("is Danger!");
+        isDanger = true;
+
 		openClose.isOpen = true;
 		openClose.GetComponent<Animator>().SetTrigger ("opens");
 		openClose.GetComponent<Collider2D>().offset = openOffset;
