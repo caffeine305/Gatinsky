@@ -1,0 +1,5 @@
+Las ventanas quedaron en desorden. La lógica de las mismas todavía presenta un detalle.
+
+El comportamiento del salto del gato se debe definir por script: Si salta, hay que variar las velocidades a las que se mueve de manera lateral. Yo había establecido un único valor para la velocidad del salto, pero creo que podría implementarse un salto variable. 
+
+Viendo que existe la función addForce.Impulse, habría que investigar si existe addForce.Step. Si es así, un salto exponencial en dos fases (carga cuando sube, descarga cuando baja) podría simular bien el salto.

@@ -8,7 +8,7 @@ public class OpenCloseCtlr : MonoBehaviour {
 	public bool isOpen;
     public Animator animator; //Declarar Animator para tener acceo a el
     public Collider2D collider; //Declarar Collider para poder modificarlo también
-    public HealthManager healthMan; //Declarar Script para poder accesarlo y saber en que momento se termina la energía de la ventana. 
+    HealthManager healthMan; //Declarar Script para poder accesarlo y saber en que momento se termina la energía de la ventana. 
     Vector2 openOffset = new Vector2 (-0.1651628f, 0.0240237f); //Posición Collider Ventana Abierta
     Vector2 closedOffset = new Vector2 (0.12f, 0.0240237f); //Posición Collider Ventana Cerrada
 

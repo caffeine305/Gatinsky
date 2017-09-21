@@ -29,7 +29,7 @@ public class EnemyAttack : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if(other.gameObject.name == "Window")
+        if(other.gameObject.name == "Window(Clone)")
         {
             //healthManager.TakeDamage(attackDamage);
             windowTouched = true;
@@ -39,7 +39,7 @@ public class EnemyAttack : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.name == "Window")
+        if (other.gameObject.name == "Window(Clone)")
         {
             windowTouched = false;
 			Debug.Log (windowTouched);
