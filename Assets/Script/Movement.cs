@@ -4,11 +4,13 @@ using System.Collections;
 public class Movement : MonoBehaviour {
 
     public float moveSpeed;
+    public float jumpSpeed;
     public bool onGround;
     public bool isJumping;
 
     void Start(){
         moveSpeed = 10.0f;
+        jumpSpeed = 18.0f;
         onGround = true;
         isJumping = false;
     }
@@ -35,13 +37,23 @@ public class Movement : MonoBehaviour {
                 onGround = false;
                 isJumping = true;
             }
+
         }
 
         if (isJumping == true)
         {
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, moveSpeed), ForceMode2D.Impulse); // ¡ESTA ES UNA FORMA MUY TÉCNICA!
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, jumpSpeed), ForceMode2D.Impulse); // ¡ESTA ES UNA FORMA MUY TÉCNICA!
             isJumping = false;
         }
+
+        if (onGround == false)
+        {
+            moveSpeed = 2.0f;
+        }
+        else
+            moveSpeed = 10.0f;
+        
+
     }
 
 

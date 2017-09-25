@@ -1,0 +1,39 @@
+Las ventanas quedaron en desorden. La lógica de las mismas todavía presenta un detalle.
+
+ 
+
+Las ventanas deben cumplir con la siguiente lógica:
+
+Si ikkkkkkkkk
+
+´ñ{
+
+0'p'
+
+La ventana tiene dos estados: Abierta y cerrada, y recibe des entradas: Del jugador y del enemigo.
+
+Si está abierta y la toca el jugador, entonces se cierra.
+Si está abierta y la toca el enemigo, entonces hay peligro de que este entre.
+Si está cerrada y la toca el jugador, entonces no pasa nad.
+Si está cerrada y la toca el enemigo, entonces empieza a bajar su barra de vida y cuando esta llega a cero, se abre.
+
+La premisa a evaluar es "Si la ventana está ... y el jugador (si/no) la toca, y el enemigo (si/no) la toca, entonces..." Y el resultado es el estado final de la ventana.
+
+Cerrado: 0
+Abierto: 1
+
+Estado   Jugador   Enemigo    (Si.. entonces...) 
+  0	    0		0		0
+  0 	    1		0		0
+  1	    0		0		1 
+  1         1		0		0
+  0	    0		1		->1 (Se vacía energía y el estado final es 1)	
+  0 	    1		1		0 (domina el jugador)
+  1	    0		1		1* (¡Peligro!) 
+  1         1		1		0
+
+Corregido el salto del gatinsky. Sin embargo,  creo que podría implementarse un salto de velocidad variable. 
+
+
+
+Viendo que existe la función addForce.Impulse, habría que investigar si existe addForce.Step. Si es así, un salto exponencial en dos fases (carga cuando sube, descarga cuando baja) podría simular bien el salto.
