@@ -9,16 +9,10 @@ public class OpenCloseCtlr : MonoBehaviour {
     public bool isOpen;
     public Animator animator; //Declarar Animator para tener acceo a el
     public Collider2D collider; //Declarar Collider para poder modificarlo también
-<<<<<<< HEAD
+
     public HealthManager healthMan; //Declarar Script para poder accesarlo y saber en que momento se termina la energía de la ventana. 
     Vector2 openOffset = new Vector2(-0.1651628f, 0.0240237f); //Posición Collider Ventana Abierta
     Vector2 closedOffset = new Vector2(0.12f, 0.0240237f); //Posición Collider Ventana Cerrada
-=======
-    HealthManager healthMan; //Declarar Script para poder accesarlo y saber en que momento se termina la energía de la ventana. 
-    Vector2 openOffset = new Vector2 (-0.1651628f, 0.0240237f); //Posición Collider Ventana Abierta
-    Vector2 closedOffset = new Vector2 (0.12f, 0.0240237f); //Posición Collider Ventana Cerrada
->>>>>>> 272f3c163d559839896002e03227cf4272a331ae
-
 
     private void Awake()
     {
@@ -30,37 +24,41 @@ public class OpenCloseCtlr : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-<<<<<<< HEAD
-        if ((other.gameObject.name == "Gatinsky_Big") && (isOpen)) {
+        if (other.gameObject.name == "Gatinsky_Big")
+        {
+            this.isOpen = false;
+            healthMan.actualHP = healthMan.maxHP;
+            this.healthMan.isDanger = false;
+
             this.animator.SetTrigger("closes"); //Manda a llamar animación de ventana cerrada
             this.collider.offset = closedOffset; //Mueve el collider de acuerdo a la posición "física" de la puerta.
-            this.isOpen = false; //Bandera: Ventana cerrada
-            this.healthMan.isDanger = false; //No hay riesgo de que entren bichos
-            this.healthMan.actualHP = healthMan.maxHP; //se regenera la energía de la puerta.
         }
-        else if ((other.gameObject.name == "Invader") && (!isOpen)) {
-            Debug.Log("Inside Valid State");
-            if (healthMan.actualHP <= 0)
+
+        if ((healthMan.actualHP <=0) && (isOpen))
+        {
+            if (other.gameObject.name == "Invader")
             {
-                this.animator.SetTrigger("opens"); //Manda a llamar animación de ventana cerrada
+                this.isOpen = true; // Bandera: Ventana Abierta
+                this.healthMan.isDanger = true; //Hay riesgo de que entren bichos
+
+                this.animator.SetTrigger("opens"); //Manda a llamar animación de ventana abierta
                 this.collider.offset = openOffset; //Mueve el collider de acuerdo a la posición "física" de la puerta.
             }
         }
+
+        if (other.gameObject.name == "Gatinsky_Big")
+        {
+            this.isOpen = false;
+            healthMan.actualHP = healthMan.maxHP;
+            this.healthMan.isDanger = false;
+
+            this.animator.SetTrigger("closes"); //Manda a llamar animación de ventana cerrada
+            this.collider.offset = closedOffset; //Mueve el collider de acuerdo a la posición "física" de la puerta.
+        }
     }
-=======
-		if (other.gameObject.name == "Gatinsky_Big") {
-			animator.SetTrigger ("closes"); //Manda a llamar animación de ventana cerrada
-			collider.offset = closedOffset; //Mueve el collider de acuerdo a la posición "física" de la puerta.
-			isOpen = false; //Bandera: Ventana cerrada
-            healthMan.isDanger = false; //No hay riesgo de que entren bichos
-            healthMan.actualHP = healthMan.maxHP; //se regenera la energía de la puerta.
-		}
-       
-	}
 
->>>>>>> 272f3c163d559839896002e03227cf4272a331ae
 
-    private void FixedUpdate()
+private void FixedUpdate()
     {
         if (healthMan.isDanger)
         {

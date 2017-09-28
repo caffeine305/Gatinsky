@@ -85,12 +85,5 @@ public class HealthManager : MonoBehaviour {
         //Levantar indicador de ventana abierta que permita generar comportamiento apropiado.
         Debug.Log("is Danger!");
         isDanger = true;
-<<<<<<< HEAD
-=======
-
-		openClose.isOpen = true;
-		openClose.GetComponent<Animator>().SetTrigger ("opens");
-		openClose.GetComponent<Collider2D>().offset = openOffset;
->>>>>>> 272f3c163d559839896002e03227cf4272a331ae
         }
 }

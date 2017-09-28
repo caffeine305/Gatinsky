@@ -48,7 +48,7 @@ public class Movement : MonoBehaviour {
 
         if (onGround == false)
         {
-            moveSpeed = 2.0f;
+            moveSpeed = 1.0f;
         }
         else
             moveSpeed = 10.0f;

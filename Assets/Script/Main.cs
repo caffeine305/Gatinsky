@@ -61,11 +61,7 @@ public class Main : MonoBehaviour {
         Instantiate(window, winPos, transform.rotation);
 
         //crear Ventanas
-<<<<<<< HEAD:Assets/Script/Main.cs
         Vector2 offsetPos = new Vector2(4.5f, 0.0f);
-=======
-        Vector2 offsetPos = new Vector2(2.0f, 0.0f);
->>>>>>> 272f3c163d559839896002e03227cf4272a331ae:Assets/Script/Main.cs
         Instantiate(window, winPos+offsetPos, transform.rotation);
 
         //crear Enemigos

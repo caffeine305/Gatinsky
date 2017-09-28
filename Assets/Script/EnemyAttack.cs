@@ -8,7 +8,6 @@ public class EnemyAttack : MonoBehaviour {
     GameObject window;
     HealthManager healthManager;
     public bool windowTouched;
-    
 
 	void Awake ()
     {
@@ -35,26 +34,27 @@ public class EnemyAttack : MonoBehaviour {
             windowTouched = true;
 			Debug.Log (windowTouched);
         }
+
     }
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.name == "Window(Clone)")
-        {
-            windowTouched = false;
-			Debug.Log (windowTouched);
+    void onTriggerExit2D(Collider2D other) {
+
         }
-    }
-		
+
 	void Attack()
 	{
-		// If the player has health to lose...
-		if (healthManager.actualHP > 0)
-		{
-			// ... damage the player.
-			healthManager.TakeDamage(attackDamage);
-			Debug.Log("Attacking!");
-		}   
+        // If the player has health to lose...
+        if (healthManager.actualHP > 0)
+        {
+            // ... damage the player.
+            healthManager.TakeDamage(attackDamage);
+            Debug.Log("Attacking!");
+        }
+        else {
+            //Open the window
+            window.GetComponent<OpenCloseCtlr>().isOpen = true;
+        }   
+
 	}
 
     void Update()
