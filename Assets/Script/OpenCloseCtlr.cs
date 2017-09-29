@@ -25,11 +25,13 @@ public class OpenCloseCtlr : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "Gatinsky_Big")
-            closeFunction();
-
+        {
+            if (isOpen)
+                closeFunction();
+        }
         if (other.gameObject.name == "Invader")
         {
-            if(healthMan.isDanger)
+            if((this.healthMan.isDanger)&&(!this.isOpen))
             openFunction();
         }
     }
@@ -44,16 +46,12 @@ public class OpenCloseCtlr : MonoBehaviour {
     void closeFunction()
     {
         this.isOpen = false;
-        healthMan.actualHP = healthMan.maxHP;
+        this.healthMan.actualHP = healthMan.maxHP;
 
         this.animator.SetTrigger("closes"); //Manda a llamar animación de ventana cerrada
         this.collider.offset = closedOffset; //Mueve el collider de acuerdo a la posición "física" de la ventana.
         this.healthMan.isDanger = false;
     }
 
-    private void FixedUpdate()
-    {
-
-    }
 
 }

@@ -6,7 +6,7 @@ public class EnemyAttack : MonoBehaviour {
     public int attackDamage = 2;
 
     GameObject window;
-    HealthManager healthManager;
+    public HealthManager healthManager;
     public bool windowTouched;
 
 	void Awake ()
@@ -30,10 +30,10 @@ public class EnemyAttack : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if(other.gameObject.name == "Window(Clone)")
+        if(other.gameObject.tag == "Window")
         {
             //healthManager.TakeDamage(attackDamage);
-            windowTouched = true;
+            this.windowTouched = true;
 			Debug.Log (windowTouched);
         }
 
@@ -41,10 +41,9 @@ public class EnemyAttack : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.name == "Window(Clone)")
-        {
+        if(other.gameObject.tag == "Window")            {
             //healthManager.TakeDamage(attackDamage);
-            windowTouched = false;
+            this.windowTouched = false;
             Debug.Log(windowTouched);
         }
     }
@@ -55,13 +54,9 @@ public class EnemyAttack : MonoBehaviour {
         if ((this.healthManager.actualHP > 0)&&(windowTouched))
         {
             // ... damage the player.
-            healthManager.TakeDamage(attackDamage);
+            window.GetComponent<HealthManager>().TakeDamage(attackDamage);
             Debug.Log("Attacking!");
         }
-        else {
-            //Open the window
-            window.GetComponent<OpenCloseCtlr>().isOpen = true;
-        }   
 
 	}
 

@@ -7,8 +7,14 @@ using UnityEngine.SceneManagement;
 public class Main : MonoBehaviour {
 
     public GameObject camera;
+    public GameObject scenario;
     public GameObject gatinsky;
-    public GameObject window;
+    public GameObject window1;
+    public GameObject window2;
+    public GameObject window3;
+    public GameObject window4;
+    public GameObject window5;
+    public GameObject winArray;
     public GameObject invader;
 
     public GameObject hud;
@@ -36,6 +42,7 @@ public class Main : MonoBehaviour {
         spawnTime = 2f;
         fixedTime = 2.3f;
         maxEnemies = 6+level;   //(int)(30 + (Mathf.Pow(2, level)/3) );
+        //windows = new GameObject[5];
 
         //audio = Resources.Load<AudioClip>("audio");
         //source = GetComponent<AudioSource>();
@@ -52,17 +59,25 @@ public class Main : MonoBehaviour {
         Vector3 cameraPos = new Vector3(-0.0f, 0.0f, -2.0f);
         Instantiate(camera,cameraPos, transform.rotation);
 
+        //Crear escenario
+        Vector3 scenarioPos = new Vector3(-12.0f, 0.0f, 0.0f);
+        Instantiate(scenario, scenarioPos, transform.rotation);
+
         //Crear Jugador
         Vector2 playerPos = new Vector2(-7.0f, -3.25f);
         Instantiate(gatinsky, playerPos, transform.rotation);
 
         //crear Ventanas
         Vector2 winPos = new Vector2(-9.0f, 1.4f);
-        Instantiate(window, winPos, transform.rotation);
-
-        //crear Ventanas
         Vector2 offsetPos = new Vector2(4.5f, 0.0f);
-        Instantiate(window, winPos+offsetPos, transform.rotation);
+        Vector2 winArrayPos = new Vector2(-2.0f, 1.0f);
+        //Instantiate(winArray, winArrayPos, transform.rotation);
+
+        Instantiate(window1, winPos, transform.rotation);
+        Instantiate(window2, winPos + offsetPos, transform.rotation);
+        Instantiate(window3, winPos + offsetPos * 2, transform.rotation);
+        Instantiate(window4, winPos + offsetPos * 3, transform.rotation);
+        Instantiate(window5, winPos + offsetPos * 4, transform.rotation);
 
         //crear Enemigos
         Vector2 enemyPos = new Vector2(-8.38f, 1.58f);
