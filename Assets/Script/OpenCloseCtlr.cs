@@ -25,45 +25,35 @@ public class OpenCloseCtlr : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.name == "Gatinsky_Big")
+            closeFunction();
+
+        if (other.gameObject.name == "Invader")
         {
-            this.isOpen = false;
-            healthMan.actualHP = healthMan.maxHP;
-            this.healthMan.isDanger = false;
-
-            this.animator.SetTrigger("closes"); //Manda a llamar animación de ventana cerrada
-            this.collider.offset = closedOffset; //Mueve el collider de acuerdo a la posición "física" de la puerta.
-        }
-
-        if ((healthMan.actualHP <=0) && (isOpen))
-        {
-            if (other.gameObject.name == "Invader")
-            {
-                this.isOpen = true; // Bandera: Ventana Abierta
-                this.healthMan.isDanger = true; //Hay riesgo de que entren bichos
-
-                this.animator.SetTrigger("opens"); //Manda a llamar animación de ventana abierta
-                this.collider.offset = openOffset; //Mueve el collider de acuerdo a la posición "física" de la puerta.
-            }
-        }
-
-        if (other.gameObject.name == "Gatinsky_Big")
-        {
-            this.isOpen = false;
-            healthMan.actualHP = healthMan.maxHP;
-            this.healthMan.isDanger = false;
-
-            this.animator.SetTrigger("closes"); //Manda a llamar animación de ventana cerrada
-            this.collider.offset = closedOffset; //Mueve el collider de acuerdo a la posición "física" de la puerta.
+            if(healthMan.isDanger)
+            openFunction();
         }
     }
 
-
-private void FixedUpdate()
+    void openFunction()
     {
-        if (healthMan.isDanger)
-        {
-            isOpen = true;
-        }     
+        this.isOpen = true; // Bandera: Ventana Abierta
+        this.animator.SetTrigger("opens"); //Manda a llamar animación de ventana abierta
+        this.collider.offset = openOffset; //Mueve el collider de acuerdo a la posición "física" de la    
+    }
+
+    void closeFunction()
+    {
+        this.isOpen = false;
+        healthMan.actualHP = healthMan.maxHP;
+
+        this.animator.SetTrigger("closes"); //Manda a llamar animación de ventana cerrada
+        this.collider.offset = closedOffset; //Mueve el collider de acuerdo a la posición "física" de la ventana.
+        this.healthMan.isDanger = false;
+    }
+
+    private void FixedUpdate()
+    {
+
     }
 
 }

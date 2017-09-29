@@ -13,9 +13,7 @@ public class HealthManager : MonoBehaviour {
 	public Slider winHealthSlider;
 	OpenCloseCtlr openClose;
 	Vector2 openOffset = new Vector2 (-0.1651628f, 0.0240237f); //Posición Collider Ventana Abierta
-    public bool isDanger;
-
-	//Banderas. Permiten al programa conocer detalles sobre la ventana y así producir una acción a tono
+    public bool isDanger; //Banderas. Permiten al programa conocer detalles sobre la ventana y así producir una acción a tono
     
     bool damaged;
 
@@ -40,24 +38,13 @@ public class HealthManager : MonoBehaviour {
 		} else {
 			Debug.Log ("No fue posible cargar el Slider 'HealthSlider' ");
 		}
-		openClose.isOpen = true;
     }
-
-    /*
-	void Update () {
-            if (damaged) // set flash colour
-            else //clear transition colour
-
-                damaged = false;
-    }
-    */
       
 
     public void TakeDamage(int amount)
     {
         //Poner bandera de Damage para activar comportamiento de daño.
         damaged = true;
-		openClose.isOpen = false;
 
         //Restar energía una cantidad dictada por amount
         actualHP -= amount;

@@ -23,6 +23,8 @@ public class EnemyAttack : MonoBehaviour {
         {
             Debug.Log("No se puede encontrar el Script 'HealthManager' ");
         }
+
+        windowTouched = false;
         
 	}
 
@@ -37,14 +39,20 @@ public class EnemyAttack : MonoBehaviour {
 
     }
 
-    void onTriggerExit2D(Collider2D other) {
-
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.name == "Window(Clone)")
+        {
+            //healthManager.TakeDamage(attackDamage);
+            windowTouched = false;
+            Debug.Log(windowTouched);
         }
+    }
 
-	void Attack()
+    void Attack()
 	{
         // If the player has health to lose...
-        if (healthManager.actualHP > 0)
+        if ((this.healthManager.actualHP > 0)&&(windowTouched))
         {
             // ... damage the player.
             healthManager.TakeDamage(attackDamage);
@@ -59,10 +67,7 @@ public class EnemyAttack : MonoBehaviour {
 
     void Update()
     {
-        if(windowTouched)
-        {
-            Attack();
-        }
+        Attack();
     }
     
 
