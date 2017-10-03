@@ -7,10 +7,14 @@ public class OpenCloseCtlr : MonoBehaviour {
     private bool opens;
     private bool closes;
     public bool isOpen;
+
+    public int maxHP = 1000;
+    public int actualHP;
+    public bool isDanger; //Banderas. Permiten al programa conocer detalles sobre la ventana y así producir una acción a tono
+
     public Animator animator; //Declarar Animator para tener acceo a el
     public Collider2D collider; //Declarar Collider para poder modificarlo también
 
-    public HealthManager healthMan; //Declarar Script para poder accesarlo y saber en que momento se termina la energía de la ventana. 
     Vector2 openOffset = new Vector2(-0.1651628f, 0.0240237f); //Posición Collider Ventana Abierta
     Vector2 closedOffset = new Vector2(0.12f, 0.0240237f); //Posición Collider Ventana Cerrada
 
@@ -19,7 +23,10 @@ public class OpenCloseCtlr : MonoBehaviour {
         //Inicializar Animator y Collider al arrancar el programa
         animator = GetComponentInChildren<Animator>();
         collider = GetComponentInChildren<Collider2D>();
-        healthMan = GetComponentInChildren<HealthManager>();
+        
+        //Inicializar variables y banderas.
+        this.actualHP = maxHP;
+        this.isDanger = false;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -31,7 +38,7 @@ public class OpenCloseCtlr : MonoBehaviour {
         }
         if (other.gameObject.name == "Invader")
         {
-            if((this.healthMan.isDanger)&&(!this.isOpen))
+            if((this.isDanger)&&(!this.isOpen))
             openFunction();
         }
     }
@@ -46,12 +53,34 @@ public class OpenCloseCtlr : MonoBehaviour {
     void closeFunction()
     {
         this.isOpen = false;
-        this.healthMan.actualHP = healthMan.maxHP;
+        this.actualHP = this.maxHP;
 
         this.animator.SetTrigger("closes"); //Manda a llamar animación de ventana cerrada
         this.collider.offset = closedOffset; //Mueve el collider de acuerdo a la posición "física" de la ventana.
-        this.healthMan.isDanger = false;
+        this.isDanger = false;
     }
 
+    public void TakeDamage(int amount)
+    {
+        //Restar energía una cantidad dictada por amount
+        this.actualHP -= amount;
+        Debug.Log(actualHP);
+
+        //reducir el tamaño de la barra de energía
+        //UpdateHealthBar(actualHP);
+
+        //Si la energía llega a cero, abrir la ventana
+        if (this.actualHP <= 0)
+        {
+            Danger();
+        }
+    }
+
+    void Danger()
+    {
+        //Levantar indicador de ventana abierta que permita generar comportamiento apropiado.
+        Debug.Log("is Danger!");
+        this.isDanger = true;
+    }
 
 }

@@ -6,22 +6,22 @@ public class EnemyAttack : MonoBehaviour {
     public int attackDamage = 2;
 
     GameObject window;
-    public HealthManager healthManager;
+    public OpenCloseCtlr openClose;
     public bool windowTouched;
 
 	void Awake ()
     {
         window = GameObject.FindGameObjectWithTag("Window");
 
-        GameObject LoadHealthManager = GameObject.FindWithTag("Window");
-        if (LoadHealthManager != null)
+        GameObject LoadOpenClose = GameObject.FindWithTag("Window");
+        if (LoadOpenClose != null)
         {
-            healthManager = window.GetComponent<HealthManager>();
+            openClose = window.GetComponent<OpenCloseCtlr>();
         }
 
-        if (LoadHealthManager == null)
+        if (LoadOpenClose == null)
         {
-            Debug.Log("No se puede encontrar el Script 'HealthManager' ");
+            Debug.Log("No se puede encontrar el Script 'OpenCloseCtlr' ");
         }
 
         windowTouched = false;
@@ -51,10 +51,10 @@ public class EnemyAttack : MonoBehaviour {
     void Attack()
 	{
         // If the player has health to lose...
-        if ((this.healthManager.actualHP > 0)&&(windowTouched))
+        if ((this.openClose.actualHP > 0)&&(windowTouched))
         {
             // ... damage the player.
-            window.GetComponent<HealthManager>().TakeDamage(attackDamage);
+            window.GetComponent<OpenCloseCtlr>().TakeDamage(attackDamage);
             Debug.Log("Attacking!");
         }
 
