@@ -15,7 +15,7 @@ public class Main : MonoBehaviour {
     public GameObject window4;
     public GameObject window5;
     public GameObject winArray;
-    public GameObject invader;
+    public GameObject enemy;
 
     public GameObject hud;
     //public Slider healthSlider;
@@ -74,14 +74,14 @@ public class Main : MonoBehaviour {
         //Instantiate(winArray, winArrayPos, transform.rotation);
 
         Instantiate(window1, winPos, transform.rotation);
-        Instantiate(window2, winPos + offsetPos, transform.rotation);
-        Instantiate(window3, winPos + offsetPos * 2, transform.rotation);
-        Instantiate(window4, winPos + offsetPos * 3, transform.rotation);
+        //Instantiate(window2, winPos + offsetPos, transform.rotation);
+        //Instantiate(window3, winPos + offsetPos * 2, transform.rotation);
+        //Instantiate(window4, winPos + offsetPos * 3, transform.rotation);
         Instantiate(window5, winPos + offsetPos * 4, transform.rotation);
 
         //crear Enemigos
         Vector2 enemyPos = new Vector2(-8.38f, 1.58f);
-        Instantiate(invader, enemyPos, transform.rotation);
+        Instantiate(enemy, enemyPos, transform.rotation);
         yield return new WaitForSeconds(spawnTime * Random.Range(0.0f, 0.7f));
 
     }
