@@ -69,19 +69,21 @@ public class Main : MonoBehaviour {
 
         //crear Ventanas
         Vector2 winPos = new Vector2(-9.0f, 1.4f);
-        Vector2 offsetPos = new Vector2(4.5f, 0.0f);
+        Vector2 offsetPos = new Vector2(4.0f, 0.0f);
         Vector2 winArrayPos = new Vector2(-2.0f, 1.0f);
         //Instantiate(winArray, winArrayPos, transform.rotation);
 
         Instantiate(window1, winPos, transform.rotation);
-        //Instantiate(window2, winPos + offsetPos, transform.rotation);
-        //Instantiate(window3, winPos + offsetPos * 2, transform.rotation);
-        //Instantiate(window4, winPos + offsetPos * 3, transform.rotation);
+        Instantiate(window2, winPos + offsetPos, transform.rotation);
+        Instantiate(window3, winPos + offsetPos * 2, transform.rotation);
+        Instantiate(window4, winPos + offsetPos * 3, transform.rotation);
         Instantiate(window5, winPos + offsetPos * 4, transform.rotation);
 
         //crear Enemigos
-        Vector2 enemyPos = new Vector2(-8.38f, 1.58f);
+        Vector2 enemyPos = new Vector2(-8.38f, 1.0f);
+        Vector2 offsetY = new Vector2(0.0f,1.0f);
         Instantiate(enemy, enemyPos, transform.rotation);
+        Instantiate(enemy, enemyPos+offsetY, transform.rotation);
         yield return new WaitForSeconds(spawnTime * Random.Range(0.0f, 0.7f));
 
     }
