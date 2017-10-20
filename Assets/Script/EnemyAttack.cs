@@ -3,30 +3,14 @@ using System.Collections;
 
 public class EnemyAttack : MonoBehaviour {
 
-    public int attackDamage = 2;
+    public int attackDamage;
 
     GameObject window;
-    //public OpenCloseCtlr openClose;
     public bool windowTouched;
 
 	void Awake ()
-    {
-     /*   
-        window = GameObject.FindGameObjectWithTag("Window");
-
-        GameObject LoadOpenClose = GameObject.FindWithTag("Window");
-        if (LoadOpenClose != null)
-        {
-            openClose = window.GetComponent<OpenCloseCtlr>();
-        }
-
-        if (LoadOpenClose == null)
-        {
-            Debug.Log("No se puede encontrar el Script 'OpenCloseCtlr' ");
-        }
-     */ 
-        windowTouched = false;
-        
+    { 
+        windowTouched = false;   
 	}
 
     void OnTriggerStay2D(Collider2D other)
@@ -47,26 +31,6 @@ public class EnemyAttack : MonoBehaviour {
             Debug.Log(windowTouched);
         }
     }
-    /*
-    void Attack()
-	{
-        // If the player has health to lose...
-        if ((this.openClose.actualHP > 0)&&(windowTouched))
-        {
-            // ... damage the player.
-            this.openClose.TakeDamage(attackDamage);
-            Debug.Log("Attacking!");
-        }
-
-	}
-    
-
-    void Update()
-    {
-        Attack();
-    }*/
-    
-
 
     
 }
