@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour {
 
     public int enemVel;
-	// Use this for initialization
-	void Start () {
+
+	void Start ()
+    {
         enemVel = 7;
 	}
 
@@ -17,11 +18,10 @@ public class EnemyMovement : MonoBehaviour {
             enemVel = enemVel * (-1);
         }
     }
-            // Update is called once per frame
-            void FixedUpdate () {
 
-            transform.Translate(Vector2.right * enemVel * Time.deltaTime);
+    void FixedUpdate ()
+    {
+        transform.Translate(Vector2.right * enemVel * Time.deltaTime);
+    }
 
-
-        }
 }
