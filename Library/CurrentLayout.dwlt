@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 334, y: 271}
   m_MaxSize: {x: 14004, y: 10021}
   vertical: 0
-  controlID: 105
+  controlID: 70
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 145
+  controlID: 34
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -310,7 +310,7 @@ MonoBehaviour:
   - {fileID: 22}
   - {fileID: 15}
   m_Selected: 0
-  m_LastSelected: 0
+  m_LastSelected: 1
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -361,9 +361,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1069
+    x: 1030
     y: 92
-    width: 291
+    width: 330
     height: 624
 --- !u!114 &16
 MonoBehaviour:
@@ -512,9 +512,9 @@ MonoBehaviour:
     height: 346
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: 08270000
     m_LastClickedID: 0
-    m_ExpandedIDs: 9242fcffa642fcff1a88fcff2e88fcff2a51fdff1eb4fdff32b4fdffa8b4fdff98d0fdffacd0fdfff8d0fdff22d1fdff206bfeffe60ffffffa0fffffa066ffffbcf8ffffdefbffff00000000
+    m_ExpandedIDs: 90a0fdff3499ffff4899ffffdefbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -575,11 +575,11 @@ MonoBehaviour:
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
-    showFog: 1
+    showFog: 0
     showMaterialUpdate: 0
-    showSkybox: 1
-    showFlares: 1
-    showImageEffects: 1
+    showSkybox: 0
+    showFlares: 0
+    showImageEffects: 0
   grid:
     xGrid:
       m_Target: 0
@@ -598,14 +598,14 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 20.742205
+    m_Target: 22.223888
     speed: 2
-    m_Value: 20.742205
+    m_Value: 22.223888
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: 0.08717229, y: -0.89959055, z: 0.21045254, w: 0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -648,18 +648,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefab
+    - Assets/Script
   m_ViewMode: 1
   m_StartGridSize: 50
   m_LastFolders:
-  - Assets/Prefab
+  - Assets/Script
   m_LastFoldersGridSize: 50
   m_LastProjectPath: C:\Users\Ricardo\Documents\GitHub\Gatinsky
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 64250000
-    m_LastClickedID: 9572
+    m_SelectedIDs: a2250000
+    m_LastClickedID: 9634
     m_ExpandedIDs: 00000000e6240000ee240000f8240000062500000e2500001225000038250000662500007425000076250000782500009a250000ee250000f025000006260000242600003a260000442600004626000070260000a0260000e0260000e2260000e4260000e6260000e8260000ea260000ec260000ee260000f0260000f2260000f4260000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -716,21 +716,21 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: d01e0000f4060000146700003a050000ae080000060900005a9b0000b80500001cdf000072e4ffff3ab6ffffd22300009a230000a2220000e4210000462b0000d22100003a1c00000005000066e8ffff0605000094b1ffff300500000a050000080500001e05000030acfeffae53fdff200500005205000066050000f6a5fdff2c0500008a0500002a05000032050000d61c0000ec1c0000261d0000181e00003e1d0000181d0000920500000c0500003a2500009825000000000000182700000c25000018250000aa250000
+    m_ExpandedInstanceIDs: d01e0000f4060000146700003a050000ae080000060900005a9b0000b80500001cdf000072e4ffff3ab6ffffd22300009a230000a2220000e4210000462b0000d22100003a1c00000005000066e8ffff0605000094b1ffff300500000a050000080500001e05000030acfeffae53fdff200500005205000066050000f6a5fdff2c0500008a0500002a05000032050000d61c0000ec1c0000261d0000181e00003e1d0000181d0000920500000c0500003a2500009825000000000000182700000c2500001825000006270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Volador
+      m_OriginalName: Volador
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 9990
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 12}
     m_CreateAssetUtility:

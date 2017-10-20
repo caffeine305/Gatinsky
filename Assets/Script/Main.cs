@@ -16,6 +16,7 @@ public class Main : MonoBehaviour {
     public GameObject window5;
     public GameObject winArray;
     public GameObject enemy;
+    public GameObject paloma;
 
     public GameObject hud;
     //public Slider healthSlider;
@@ -74,7 +75,7 @@ public class Main : MonoBehaviour {
         //Instantiate(winArray, winArrayPos, transform.rotation);
 
         Instantiate(window1, winPos, transform.rotation);
-        Instantiate(window2, winPos + offsetPos, transform.rotation);
+        Instantiate(window1, winPos + offsetPos, transform.rotation);
         Instantiate(window3, winPos + offsetPos * 2, transform.rotation);
         Instantiate(window4, winPos + offsetPos * 3, transform.rotation);
         Instantiate(window5, winPos + offsetPos * 4, transform.rotation);
@@ -83,7 +84,7 @@ public class Main : MonoBehaviour {
         Vector2 enemyPos = new Vector2(-8.38f, 1.0f);
         Vector2 offsetY = new Vector2(0.0f,1.0f);
         Instantiate(enemy, enemyPos, transform.rotation);
-        Instantiate(enemy, enemyPos+offsetY, transform.rotation);
+        Instantiate(paloma, enemyPos+offsetY, transform.rotation);
         yield return new WaitForSeconds(spawnTime * Random.Range(0.0f, 0.7f));
 
     }

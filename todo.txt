@@ -1,4 +1,14 @@
 
-Considere aumentar la velocidad del salto del gatinsky. 
+Hay que implementar al enemigo moviéndose para acomodarse. Una etiqueta permite al enemigo acercarse a la ventana mas próxima.
 
-Hay que implementar el movimiento del enemigo terrestre. Su Hitbox no se debe activar hasta que no se coloque en la ventana.
+Es posible que se deba escribir un sistema de etiquetado para las ventanas de tal manera que el enemigo sea atraido a una ventana al azar. El sistema debe respetar solamente una etiqueta por ventana.
+
+Algo que llame de manera aleatoria las etiqueras mediante vectores ya preestablecidos.
+
+Se puede primero implementar el etiquetado y luego proceder con la forma en como el enemigo camina hacia la etiqueta.
+
+Algo así como, "primero viaja hasta la posición en x y luego sube a la posición en y" para enemigos terrestres.
+
+Los enemigos voladores llegan de diferente manera a la etiqueta.
+
+Considere aumentar la velocidad del salto del gatinsky. 

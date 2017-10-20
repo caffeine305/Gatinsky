@@ -44,7 +44,7 @@ public class OpenCloseCtlr : MonoBehaviour {
             isTouched = true;
         }
 
-        if (other.gameObject.name == "Invader")
+        if (other.gameObject.tag == "Enemy")
         {
             isTouchedByEnemy = true;
             enemys.Add(other.gameObject); //Agregamos el nuevo enemigo a la lista
@@ -60,7 +60,7 @@ public class OpenCloseCtlr : MonoBehaviour {
         {
             isTouched = false;
         }
-		if (other.gameObject.name == "Invader") {
+		if (other.gameObject.tag == "Enemy") {
 			enemys.Remove(other.gameObject); // Eliminamos el enemigo que sale de la lista
             isTouchedByEnemy = false;
         }
