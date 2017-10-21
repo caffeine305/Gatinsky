@@ -1,10 +1,17 @@
 fileFormatVersion: 2
 guid: 57f052d3727921b438867c785d653518
-timeCreated: 1504504227
+timeCreated: 1508571943
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - camera: {fileID: 182130, guid: afde5f251cb641f4cbb14e55eb9d1134, type: 2}
+  - scenario: {fileID: 160848, guid: 3bba186ec215d7a4b93d8fb022c36617, type: 2}
+  - gatinsky: {fileID: 193378, guid: 02d0e3b13e9d4ae45b07600a82278598, type: 2}
+  - window: {fileID: 199628, guid: 0b2db8c7f4985c74a991c33e370ff31a, type: 2}
+  - enemy: {fileID: 135758, guid: 9f34e3608cb8078459cf2fe0245095cf, type: 2}
+  - paloma: {fileID: 135758, guid: 891545d8750eca143b2a2da8accbd2af, type: 2}
+  - hud: {fileID: 149230, guid: eec4bc6330a15fb498e0988a062165c2, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

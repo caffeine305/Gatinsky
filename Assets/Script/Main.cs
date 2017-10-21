@@ -9,12 +9,12 @@ public class Main : MonoBehaviour {
     public GameObject camera;
     public GameObject scenario;
     public GameObject gatinsky;
-    public GameObject window1;
-    public GameObject window2;
-    public GameObject window3;
-    public GameObject window4;
-    public GameObject window5;
-    public GameObject winArray;
+    public GameObject window;
+    //public GameObject window2;
+    //public GameObject window3;
+    //public GameObject window4;
+    //public GameObject window5;
+    //public GameObject winArray;
     public GameObject enemy;
     public GameObject paloma;
 
@@ -74,11 +74,11 @@ public class Main : MonoBehaviour {
         Vector2 winArrayPos = new Vector2(-2.0f, 1.0f);
         //Instantiate(winArray, winArrayPos, transform.rotation);
 
-        Instantiate(window1, winPos, transform.rotation);
-        Instantiate(window1, winPos + offsetPos, transform.rotation);
-        Instantiate(window3, winPos + offsetPos * 2, transform.rotation);
-        Instantiate(window4, winPos + offsetPos * 3, transform.rotation);
-        Instantiate(window5, winPos + offsetPos * 4, transform.rotation);
+        Instantiate(window, winPos, transform.rotation);
+        Instantiate(window, winPos + offsetPos, transform.rotation);
+        Instantiate(window, winPos + offsetPos * 2, transform.rotation);
+        Instantiate(window, winPos + offsetPos * 3, transform.rotation);
+        Instantiate(window, winPos + offsetPos * 4, transform.rotation);
 
         //crear Enemigos
         Vector2 enemyPos = new Vector2(-8.38f, 1.0f);
@@ -94,12 +94,12 @@ public class Main : MonoBehaviour {
         score += sumarValorScore;
         UpdateScore();
     }
-
+    
     void UpdateScore()
     {
         hud.GetComponentInChildren<TextMesh>().text = "Score:" + score;
     }
-
+    
     public void UpdateEliminados(int sumarNumEliminados)
     {
         eliminated += sumarNumEliminados;

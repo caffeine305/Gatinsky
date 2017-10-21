@@ -94,6 +94,10 @@ public class OpenCloseCtlr : MonoBehaviour {
         if ((isTouchedByEnemy)&&(!isOpen))
         {
             this.actualHP -= amount;
+
+            if (this.actualHP < 0)
+                this.actualHP = 0;
+
             Debug.Log(actualHP);
         }
         //reducir el tamaño de la barra de energía
