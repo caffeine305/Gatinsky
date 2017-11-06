@@ -10,11 +10,7 @@ public class Main : MonoBehaviour {
     public GameObject scenario;
     public GameObject gatinsky;
     public GameObject window;
-    //public GameObject window2;
-    //public GameObject window3;
-    //public GameObject window4;
-    //public GameObject window5;
-    //public GameObject winArray;
+
     public GameObject enemy;
     public GameObject paloma;
 
@@ -30,6 +26,8 @@ public class Main : MonoBehaviour {
     private float spawnTime;
     private float fixedTime;
     private float velocidad;
+
+    Vector2 enemyPos;
     
     int maxEnemies;
 
@@ -43,7 +41,6 @@ public class Main : MonoBehaviour {
         spawnTime = 2f;
         fixedTime = 2.3f;
         maxEnemies = 6+level;   //(int)(30 + (Mathf.Pow(2, level)/3) );
-        //windows = new GameObject[5];
 
         //audio = Resources.Load<AudioClip>("audio");
         //source = GetComponent<AudioSource>();
@@ -71,8 +68,6 @@ public class Main : MonoBehaviour {
         //crear Ventanas
         Vector2 winPos = new Vector2(-9.0f, 1.4f);
         Vector2 offsetPos = new Vector2(4.0f, 0.0f);
-        Vector2 winArrayPos = new Vector2(-2.0f, 1.0f);
-        //Instantiate(winArray, winArrayPos, transform.rotation);
 
         Instantiate(window, winPos, transform.rotation);
         Instantiate(window, winPos + offsetPos, transform.rotation);
@@ -81,12 +76,23 @@ public class Main : MonoBehaviour {
         Instantiate(window, winPos + offsetPos * 4, transform.rotation);
 
         //crear Enemigos
-        Vector2 enemyPos = new Vector2(-8.38f, 1.0f);
-        Vector2 offsetY = new Vector2(0.0f,1.0f);
-        Instantiate(enemy, enemyPos, transform.rotation);
-        Instantiate(paloma, enemyPos+offsetY, transform.rotation);
-        yield return new WaitForSeconds(spawnTime * Random.Range(0.0f, 0.7f));
 
+        SetRandomPosition();
+        Vector2 offsetY = new Vector2(0.0f, 7.75f);
+        Instantiate(enemy, enemyPos, transform.rotation);
+
+        //SetPalomaPosition();
+
+        Instantiate(paloma, SimplePos(), transform.rotation);
+        yield return new WaitForSeconds(20.0f);
+        //yield return new WaitForSeconds(spawnTime * Random.Range(0.0f, 0.7f));
+
+    }
+
+    Vector2 SimplePos()
+    {
+        Vector2 posicion = new Vector2(-8.8f,6.2f);
+        return posicion;
     }
 
     public void SumarScore(int sumarValorScore)
@@ -119,6 +125,71 @@ public class Main : MonoBehaviour {
 
      }
 
+    void SetRandomPosition()
+    {
+        float x = Random.Range(-10.0f, 8.0f);
+
+        if (x < -5.0f)
+            x = -9.0f;
+
+        if (x >= -5.0f && x < -1.0f)
+            x = -5.0f;
+
+        if (x >= -1.0f && x < 3.0f)
+            x = -1.0f;
+
+        if (x >= 3.0f && x < 7.0f)
+            x = 3.0f;
+
+        if (x > 7.0f)
+            x = 7.0f;
+
+
+        float y = -3.25f;
+
+        enemyPos = new Vector2(x, y);
+        transform.position = enemyPos;
+    }
+
+    void SetPalomaPosition()
+    { 
+            int chooseRandomWindow;
+            float aux;
+            chooseRandomWindow = Random.Range(1, 5);
+
+            switch (chooseRandomWindow)
+            {
+                case 1:
+                    aux = -9.0f;
+                    break;
+
+                case 2:
+                    aux = -5.0f;
+                    break;
+
+                case 3:
+                    aux = -1.0f;
+                    break;
+
+                case 4:
+                    aux = 3.0f;
+                    break;
+
+                case 5:
+                    aux = 7.0f;
+                    break;
+
+                default:
+                    aux = -1.0f;
+                    break;
+            }
+
+        float x = aux;
+        float y = 6.4f;
+
+        enemyPos = new Vector2(x, y);
+        transform.position = enemyPos;
+    }
     /*
       
     public void Audio()
@@ -144,33 +215,6 @@ public class Main : MonoBehaviour {
 
         return isGameOver;
     }
-   
-    void SetRandomPosition()
-    {
-        float x = Random.Range(-10.0f, 10.0f);
-        float y = Random.Range(-10.0f, 10.0f);
-        //Debug.Log("X,Z:" + x.ToString("F2") + " , " + y.ToString("F2"));
-
-        if (x > 0) {
-            x = x+2;
-        }
-        else
-        {
-            x = x-2;
-        }
-
-        if (y > 0)
-        {
-            y = y + 2;
-        }
-        else
-        {
-            y = y - 2;
-        }
-
-        zombiPos = new Vector3(x, y, 0.0f);
-        transform.position = zombiPos;
-    }
-    */
+   */
 
 }
