@@ -28,6 +28,7 @@ public class Main : MonoBehaviour {
     private float velocidad;
 
     Vector2 enemyPos;
+	public Vector2 finalPos;
     
     int maxEnemies;
 
@@ -78,15 +79,14 @@ public class Main : MonoBehaviour {
         //crear Enemigos
 
         SetRandomPosition();
+		SetTargetPosition ();
         Vector2 offsetY = new Vector2(0.0f, 7.75f);
         Instantiate(enemy, enemyPos, transform.rotation);
 
-        //SetPalomaPosition();
-
+		SetRandomPosition ();
         Instantiate(paloma, SimplePos(), transform.rotation);
         yield return new WaitForSeconds(20.0f);
-        //yield return new WaitForSeconds(spawnTime * Random.Range(0.0f, 0.7f));
-
+        
     }
 
     Vector2 SimplePos()
@@ -150,6 +150,47 @@ public class Main : MonoBehaviour {
         enemyPos = new Vector2(x, y);
         transform.position = enemyPos;
     }
+		
+	float ChooseARandomWindow()
+		{
+			int chooseRandomWindow;
+			float aux;
+			chooseRandomWindow = Random.Range(1, 6);
+			Debug.Log ("Random Window is" + chooseRandomWindow);
+
+			switch (chooseRandomWindow)
+			{
+			case 1:
+				aux = -9.0f;
+				break;
+
+			case 2:
+				aux = -5.0f;
+				break;
+
+			case 3:
+				aux = -1.0f;
+				break;
+
+			case 4:
+				aux = 3.0f;
+				break;
+
+			case 5:
+				aux = 7.0f;
+				break;
+
+			default:
+				aux = -1.0f;
+				break;
+			}return aux;
+		}
+
+	void SetTargetPosition()
+	{
+		finalPos.y = 1.4f;
+		finalPos.x = ChooseARandomWindow ();
+	}
 
     void SetPalomaPosition()
     { 

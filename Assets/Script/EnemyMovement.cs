@@ -6,18 +6,18 @@ public class EnemyMovement : MonoBehaviour {
 
     public int enemVel;
     public int enemType; //0: terrestre, 1: Volador.
+	private Main mainScript;
 
 	void Start ()
     {
         enemVel = 7;
-    }
-
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Wall")
-        {
-            enemVel = enemVel * (-1);
-        }
+		GameObject LoadMainScript = GameObject.FindWithTag ("GameController");
+		if (LoadMainScript != null)
+			mainScript = LoadMainScript.GetComponent<Main> ();
+		
+		if(LoadMainScript == null)
+			Debug.Log ("No fue posible cargar el Script 'Main' ");
+		//StartCoroutine(MoveEnemies ());
     }
 
     void moveAcord()
@@ -38,20 +38,23 @@ public class EnemyMovement : MonoBehaviour {
         if (enemType == 1)
         {
             float step = enemVel * Time.deltaTime;
-            Vector2 initialPos = transform.position;
+
+			Vector2 initialPos = transform.position;
             Vector2 finalPos = new Vector2(0.0f, 1.4f);
-            finalPos.x = ChooseARandomWindow();
+            //finalPos.x = ChooseARandomWindow();
+			finalPos = mainScript.finalPos;
             transform.position = Vector3.MoveTowards(initialPos , finalPos, step);
 
         }
 
     }
-
+	/*
     float ChooseARandomWindow()
     {
         int chooseRandomWindow;
         float aux;
-        chooseRandomWindow = Random.Range(1, 5);
+        chooseRandomWindow = Random.Range(1, 6);
+		Debug.Log ("Random Window is" + chooseRandomWindow);
 
         switch (chooseRandomWindow)
         {
@@ -81,9 +84,12 @@ public class EnemyMovement : MonoBehaviour {
         }return aux;
     }
 
-    void FixedUpdate ()
+	*/
+	void FixedUpdate()
     {
-        moveAcord();
+		moveAcord ();
+		//yield return new WaitForSeconds (0.2f);
     }
+    
 
 }
