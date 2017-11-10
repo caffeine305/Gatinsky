@@ -91,7 +91,10 @@ public class Main : MonoBehaviour {
 
     Vector2 SimplePos()
     {
-        Vector2 posicion = new Vector2(-8.8f,6.2f);
+        //Usar este vector si se arranca con el código.
+        //Vector2 posicion = new Vector2(-8.8f,6.2f);
+        //Usar est evector y permitir que el Spline determine el punto donde nace la paloma
+        Vector2 posicion = new Vector2(0f, 0f);
         return posicion;
     }
 
