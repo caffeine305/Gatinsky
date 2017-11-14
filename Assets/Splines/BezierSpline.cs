@@ -3,7 +3,7 @@ using System;
 
 public class BezierSpline : MonoBehaviour {
 
-	[SerializeField]
+    [SerializeField]
 	private Vector3[] points;
 
 	[SerializeField]
@@ -12,7 +12,7 @@ public class BezierSpline : MonoBehaviour {
 	[SerializeField]
 	private bool loop;
 
-	public bool Loop {
+    public bool Loop {
 		get {
 			return loop;
 		}

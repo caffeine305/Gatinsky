@@ -12,7 +12,7 @@ public class Main : MonoBehaviour {
     public GameObject window;
 
     public GameObject enemy;
-    public GameObject paloma;
+    public GameObject[] paloma;
 
     public GameObject hud;
     //public Slider healthSlider;
@@ -79,12 +79,12 @@ public class Main : MonoBehaviour {
         //crear Enemigos
 
         SetRandomPosition();
-		SetTargetPosition ();
+		SetTargetPosition();
         Vector2 offsetY = new Vector2(0.0f, 7.75f);
         Instantiate(enemy, enemyPos, transform.rotation);
 
-		SetRandomPosition ();
-        Instantiate(paloma, SimplePos(), transform.rotation);
+        int index = Random.Range(0, paloma.Length);
+        Instantiate(paloma[index], SimplePos(), transform.rotation);
         yield return new WaitForSeconds(20.0f);
         
     }
@@ -128,7 +128,7 @@ public class Main : MonoBehaviour {
 
      }
 
-    void SetRandomPosition()
+    public void SetRandomPosition()
     {
         float x = Random.Range(-10.0f, 8.0f);
 
@@ -189,7 +189,7 @@ public class Main : MonoBehaviour {
 			}return aux;
 		}
 
-	void SetTargetPosition()
+	public void SetTargetPosition()
 	{
 		finalPos.y = 1.4f;
 		finalPos.x = ChooseARandomWindow ();
