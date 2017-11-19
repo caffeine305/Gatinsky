@@ -77,16 +77,18 @@ public class Main : MonoBehaviour {
         Instantiate(window, winPos + offsetPos * 4, transform.rotation);
 
         //crear Enemigos
+        while (true)
+        {
+            SetRandomPosition();
+            SetTargetPosition();
+            Vector2 offsetY = new Vector2(0.0f, 7.75f);
+            Instantiate(enemy, enemyPos, transform.rotation);
+            yield return new WaitForSeconds(2.0f);
 
-        SetRandomPosition();
-		SetTargetPosition();
-        Vector2 offsetY = new Vector2(0.0f, 7.75f);
-        Instantiate(enemy, enemyPos, transform.rotation);
-
-        int index = Random.Range(0, paloma.Length);
-        Instantiate(paloma[index], SimplePos(), transform.rotation);
-        yield return new WaitForSeconds(20.0f);
-        
+            int index = Random.Range(0, paloma.Length);
+            Instantiate(paloma[index], SimplePos(), transform.rotation);
+            yield return new WaitForSeconds(2.0f);
+        }
     }
 
     Vector2 SimplePos()
@@ -94,7 +96,7 @@ public class Main : MonoBehaviour {
         //Usar este vector si se arranca con el código.
         //Vector2 posicion = new Vector2(-8.8f,6.2f);
         //Usar est evector y permitir que el Spline determine el punto donde nace la paloma
-        Vector2 posicion = new Vector2(0f, 0f);
+        Vector2 posicion = new Vector2(0f, 9f);
         return posicion;
     }
 

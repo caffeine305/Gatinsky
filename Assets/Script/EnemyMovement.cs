@@ -48,43 +48,7 @@ public class EnemyMovement : MonoBehaviour {
         }
 
     }
-	/*
-    float ChooseARandomWindow()
-    {
-        int chooseRandomWindow;
-        float aux;
-        chooseRandomWindow = Random.Range(1, 6);
-		Debug.Log ("Random Window is" + chooseRandomWindow);
 
-        switch (chooseRandomWindow)
-        {
-            case 1:
-                aux = -9.0f;
-                break;
-
-            case 2:
-                aux = -5.0f;
-                break;
-
-            case 3:
-                aux = -1.0f;
-                break;
-
-            case 4:
-                aux = 3.0f;
-                break;
-
-            case 5:
-                aux = 7.0f;
-                break;
-
-            default:
-                aux = -1.0f;
-                break;
-        }return aux;
-    }
-
-	*/
 	void FixedUpdate()
     {
 		moveAcord ();

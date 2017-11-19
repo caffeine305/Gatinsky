@@ -17,8 +17,26 @@ public class Destroy : MonoBehaviour {
         onPosition = false;
     }
 
+    /*
+    public bool CheckPosition()
+    {
+        float speed;
+        speed = this.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude;
+
+        if (speed < 0.5)
+            onPosition = true;
+        else
+            onPosition = false;
+
+        return onPosition;
+    }    
+    */
+
     private void FixedUpdate()
     {
+        //CheckPosition();
+        onPosition = true;
+
         if (onPosition)
         {
             this.gameObject.layer = 8;
@@ -41,7 +59,7 @@ public class Destroy : MonoBehaviour {
             //loadWave.SumarScore(valorScore);
             //loadWave.UpdateEliminados(eliminado);
             //loadWave.UpdateSpeed(vel);
-            Destroy(this.transform.root.gameObject, 1.0f);
+            Destroy(this.transform.root.gameObject, 0.5f);
         }
     }
 
