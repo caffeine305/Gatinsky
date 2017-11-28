@@ -9,7 +9,7 @@ public class OpenCloseCtlr : MonoBehaviour {
     private bool closes;
     public bool isOpen;
 
-    private int maxHP = 100;
+    private int maxHP = 1000;
     public int actualHP;
     public bool isDanger; //Banderas. Permiten al programa conocer detalles sobre la ventana y así producir una acción a tono
     public bool isTouched;

@@ -76,20 +76,12 @@
     <Reference Include="UnityEditor">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\OnPalomaLoad.cs" />
     <Compile Include="Assets\Script\Collision.cs" />
     <Compile Include="Assets\Script\Destroy.cs" />
     <Compile Include="Assets\Script\EnemyAttack.cs" />
     <Compile Include="Assets\Script\EnemyMovement.cs" />
-    <Compile Include="Assets\Script\HealthManager.cs" />
     <Compile Include="Assets\Script\Main.cs" />
     <Compile Include="Assets\Script\Movement.cs" />
     <Compile Include="Assets\Script\OpenCloseCtlr.cs" />
