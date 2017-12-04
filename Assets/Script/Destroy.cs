@@ -8,6 +8,8 @@ public class Destroy : MonoBehaviour {
     public double valorScore;
     public int eliminado;
     public bool onPosition;
+    public float speed;
+
 
     void Awake()
     {
@@ -15,27 +17,30 @@ public class Destroy : MonoBehaviour {
         eliminado = 0;
         vel = 10.0f;
         onPosition = false;
-    }
-
-    /*
-    public bool CheckPosition()
-    {
-        float speed;
         speed = this.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude;
 
+    }
+
+
+    public bool CheckPosition()
+    {
+
         if (speed < 0.5)
+        {
             onPosition = true;
+            speed = 0.0f;
+        }
         else
             onPosition = false;
 
         return onPosition;
     }    
-    */
+    
 
     private void FixedUpdate()
     {
-        //CheckPosition();
-        onPosition = true;
+        CheckPosition();
+        //onPosition = true;
 
         if (onPosition)
         {

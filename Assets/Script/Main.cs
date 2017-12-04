@@ -55,7 +55,7 @@ public class Main : MonoBehaviour {
         //Vector3 bannerPos = new Vector3(-1.0f, 0.0f, -3.0f);
 
         //Crear cámara
-        Vector3 cameraPos = new Vector3(-0.0f, 0.0f, -2.0f);
+        Vector3 cameraPos = new Vector3(-0.0f, 1.0f, -2.0f);
         Instantiate(camera,cameraPos, transform.rotation);
 
         //Crear escenario
@@ -77,8 +77,10 @@ public class Main : MonoBehaviour {
         Instantiate(window, winPos + offsetPos * 4, transform.rotation);
 
         //crear Enemigos
-        while (true)
+        while (true) //Mientras el jugador tenga vidas
         {
+            //while(enemigos > 0)
+
             SetRandomPosition();
             SetTargetPosition();
             Vector2 offsetY = new Vector2(0.0f, 7.75f);
@@ -88,7 +90,15 @@ public class Main : MonoBehaviour {
             int index = Random.Range(0, paloma.Length);
             Instantiate(paloma[index], SimplePos(), transform.rotation);
             yield return new WaitForSeconds(2.0f);
+
+            //countPoints();
+            //loadNextStage();
         }
+
+        //if(vidas == 0)
+        //gameOver();
+        //titleScreen();
+
     }
 
     Vector2 SimplePos()

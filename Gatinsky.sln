@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gatinsky", "Gatinsky.csproj", "{567140EE-9334-208B-C039-F38D07EB621C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gatinsky.Editor", "Gatinsky.Editor.csproj", "{B38FB3C6-13FC-F885-545E-1DD201C9FF37}"
