@@ -83,13 +83,14 @@ public class Main : MonoBehaviour {
 
             SetRandomPosition();
             SetTargetPosition();
+
             Vector2 offsetY = new Vector2(0.0f, 7.75f);
             Instantiate(enemy, enemyPos, transform.rotation);
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(spawnTime);
 
             int index = Random.Range(0, paloma.Length);
             Instantiate(paloma[index], SimplePos(), transform.rotation);
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(spawnTime);
 
             //countPoints();
             //loadNextStage();
@@ -159,8 +160,8 @@ public class Main : MonoBehaviour {
         if (x > 7.0f)
             x = 7.0f;
 
-
-        float y = -3.25f;
+        //a esta altura aparece el enemigo
+        float y = 6.5f;
 
         enemyPos = new Vector2(x, y);
         transform.position = enemyPos;

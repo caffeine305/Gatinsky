@@ -8,7 +8,7 @@ public class Destroy : MonoBehaviour {
     public double valorScore;
     public int eliminado;
     public bool onPosition;
-    public float speed;
+    public float positionY;
 
 
     void Awake()
@@ -17,18 +17,18 @@ public class Destroy : MonoBehaviour {
         eliminado = 0;
         vel = 10.0f;
         onPosition = false;
-        speed = this.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude;
-
+        positionY = transform.position.y;
+        this.gameObject.layer = 10;
     }
 
 
     public bool CheckPosition()
     {
 
-        if (speed < 0.5)
+        if (positionY > 4 || positionY < 5)
         {
             onPosition = true;
-            speed = 0.0f;
+            //speed = 0.0f;
         }
         else
             onPosition = false;
@@ -39,8 +39,8 @@ public class Destroy : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        CheckPosition();
-        //onPosition = true;
+        //CheckPosition();
+        onPosition = true;
 
         if (onPosition)
         {
