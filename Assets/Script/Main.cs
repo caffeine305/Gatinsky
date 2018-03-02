@@ -12,7 +12,8 @@ public class Main : MonoBehaviour {
     public GameObject window;
 
     public GameObject enemy;
-    public GameObject[] paloma;
+    //public GameObject[] paloma;
+	public GameObject paloma;
 
     public GameObject hud;
     //public Slider healthSlider;
@@ -88,9 +89,14 @@ public class Main : MonoBehaviour {
             Instantiate(enemy, enemyPos, transform.rotation);
             yield return new WaitForSeconds(spawnTime);
 
-            int index = Random.Range(0, paloma.Length);
-            Instantiate(paloma[index], SimplePos(), transform.rotation);
-            yield return new WaitForSeconds(spawnTime);
+			SetRandomPosition();
+			SetTargetPosition();
+
+            //int index = Random.Range(0, paloma.Length);
+            //Instantiate(paloma[index], SimplePos(), transform.rotation); //SimplePos era para mover al Volador con Splines. Se va a quitar eso.
+			//Instantiate(paloma[index], enemyPos, transform.rotation);
+			Instantiate(paloma, enemyPos, transform.rotation);
+			yield return new WaitForSeconds(spawnTime);
 
             //countPoints();
             //loadNextStage();
@@ -105,9 +111,9 @@ public class Main : MonoBehaviour {
     Vector2 SimplePos()
     {
         //Usar este vector si se arranca con el código.
-        //Vector2 posicion = new Vector2(-8.8f,6.2f);
+        Vector2 posicion = new Vector2(-8.8f,6.2f);
         //Usar est evector y permitir que el Spline determine el punto donde nace la paloma
-        Vector2 posicion = new Vector2(0f, 9f);
+        //Vector2 posicion = new Vector2(0f, 9f);
         return posicion;
     }
 
@@ -167,7 +173,7 @@ public class Main : MonoBehaviour {
         transform.position = enemyPos;
     }
 		
-	float ChooseARandomWindow()
+	public float ChooseARandomWindow()
 		{
 			int chooseRandomWindow;
 			float aux;
