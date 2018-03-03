@@ -44,7 +44,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 1
-  controlID: 48
+  controlID: 11
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 49
+  controlID: 12
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -205,7 +205,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 14006, y: 14042}
   vertical: 1
-  controlID: 50
+  controlID: 13
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 51
+  controlID: 14
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -500,7 +500,7 @@ MonoBehaviour:
       width: 1268.3636
       height: 480
     m_MinimalGUI: 1
-  m_defaultScale: 1
+  m_defaultScale: 0.6875
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
   m_LastWindowPixelSize: {x: 872, y: 347}
@@ -535,23 +535,23 @@ MonoBehaviour:
     height: 347
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: 42060000
     m_LastClickedID: 0
-    m_ExpandedIDs: cefbffff00000000
+    m_ExpandedIDs: fc1afeff7a56feffe4fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Volador2(Clone)
-      m_OriginalName: Volador2(Clone)
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: -28134
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -681,9 +681,9 @@ MonoBehaviour:
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 4}
-    m_SelectedIDs: 54260000
-    m_LastClickedID: 9812
-    m_ExpandedIDs: 0000000048060000aa250000ac250000c8250000e0250000e8250000f225000000260000062600000a260000362600006c2600006e2600007026000096260000a026000014270000282700002a2700005227000082270000982700009a270000de2700004428000046280000482800004a2800004c2800004e28000050280000522800005428000000ca9a3bffffff7f
+    m_SelectedIDs: 5e250000
+    m_LastClickedID: 9566
+    m_ExpandedIDs: 0000000042060000f4240000fc24000006250000142500001a2500001e25000042250000702500007225000074250000962500001a26000042260000442600004a2600006e26000070260000922600009a260000e6260000e8260000ea260000ec260000ee260000f0260000f2260000f4260000f6260000f8260000fa260000fc260000fe26000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -711,7 +711,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000048060000aa250000ac250000c8250000e0250000e8250000f225000000260000062600000a260000362600006c2600006e2600007026000096260000a026000014270000282700002a2700005227000082270000982700009a270000de2700004428000046280000482800004a2800004c2800004e280000502800005228000054280000
+    m_ExpandedIDs: 0000000042060000f4240000fc24000006250000142500001a2500001e25000042250000702500007225000074250000962500001a26000042260000442600004a2600006e26000070260000922600009a260000e6260000e8260000ea260000ec260000ee260000f0260000f2260000f4260000f6260000f8260000fa260000fc260000fe260000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -739,7 +739,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: d01e0000f4060000146700003a050000ae080000060900005a9b0000b80500001cdf000072e4ffff3ab6ffffd22300009a230000a2220000e4210000462b0000d22100003a1c00000005000066e8ffff0605000094b1ffff300500000a050000080500001e05000030acfeffae53fdff200500005205000066050000f6a5fdff2c0500008a0500002a05000032050000d61c0000ec1c0000261d0000181e00003e1d0000181d0000920500000c0500003a2500009825000000000000182700000c2500001825000006270000762500001425000036060000420600003e0600003c060000522500002a2600005c2600007e260000c026000064260000
+    m_ExpandedInstanceIDs: d01e0000f4060000146700003a050000ae080000060900005a9b0000b80500001cdf000072e4ffff3ab6ffffd22300009a230000a2220000e4210000462b0000d22100003a1c00000005000066e8ffff0605000094b1ffff300500000a050000080500001e05000030acfeffae53fdff200500005205000066050000f6a5fdff2c0500008a0500002a05000032050000d61c0000ec1c0000261d0000181e00003e1d0000181d0000920500000c0500003a2500009825000000000000182700000c2500001825000006270000762500001425000036060000420600003c060000522500002a2600005c2600007e260000c0260000642600003e0600003a06000038060000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

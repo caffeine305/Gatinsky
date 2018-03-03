@@ -89,8 +89,8 @@ public class Main : MonoBehaviour {
             Instantiate(enemy, enemyPos, transform.rotation);
             yield return new WaitForSeconds(spawnTime);
 
-			SetRandomPosition();
-			SetTargetPosition();
+            SetRandomPosition();
+            SetTargetPosition();
 
             //int index = Random.Range(0, paloma.Length);
             //Instantiate(paloma[index], SimplePos(), transform.rotation); //SimplePos era para mover al Volador con Splines. Se va a quitar eso.
@@ -108,14 +108,6 @@ public class Main : MonoBehaviour {
 
     }
 
-    Vector2 SimplePos()
-    {
-        //Usar este vector si se arranca con el código.
-        Vector2 posicion = new Vector2(-8.8f,6.2f);
-        //Usar est evector y permitir que el Spline determine el punto donde nace la paloma
-        //Vector2 posicion = new Vector2(0f, 9f);
-        return posicion;
-    }
 
     public void SumarScore(int sumarValorScore)
     {
@@ -172,8 +164,8 @@ public class Main : MonoBehaviour {
         enemyPos = new Vector2(x, y);
         transform.position = enemyPos;
     }
-		
-	public float ChooseARandomWindow()
+
+    public float ChooseARandomWindow()
 		{
 			int chooseRandomWindow;
 			float aux;
@@ -208,49 +200,26 @@ public class Main : MonoBehaviour {
 			}return aux;
 		}
 
-	public void SetTargetPosition()
-	{
-		finalPos.y = 1.4f;
-		finalPos.x = ChooseARandomWindow ();
-	}
+    public void SetTargetPosition()
+    {
+        finalPos.y = 1.4f;
+        finalPos.x = ChooseARandomWindow();
+    }
 
     void SetPalomaPosition()
-    { 
-            int chooseRandomWindow;
-            float aux;
-            chooseRandomWindow = Random.Range(1, 5);
+    {
+        SetRandomPosition();
 
-            switch (chooseRandomWindow)
-            {
-                case 1:
-                    aux = -9.0f;
-                    break;
+        if ((enemyPos.x > -8.0f) && (enemyPos.x < 0.0f))
+        {
+            enemyPos.x = enemyPos.x + 2.0f;
+        }
 
-                case 2:
-                    aux = -5.0f;
-                    break;
+        if ((enemyPos.x > 0.0f) && (enemyPos.x < 6.0f))
+        {
+            enemyPos.x = enemyPos.x + -2.0f;
+        }
 
-                case 3:
-                    aux = -1.0f;
-                    break;
-
-                case 4:
-                    aux = 3.0f;
-                    break;
-
-                case 5:
-                    aux = 7.0f;
-                    break;
-
-                default:
-                    aux = -1.0f;
-                    break;
-            }
-
-        float x = aux;
-        float y = 6.4f;
-
-        enemyPos = new Vector2(x, y);
         transform.position = enemyPos;
     }
     /*

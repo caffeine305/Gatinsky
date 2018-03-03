@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{567140EE-9334-208B-C039-F38D07EB621C}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Assembly-CSharp.dll</AssemblyName>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
@@ -86,14 +86,7 @@
     <Compile Include="Assets\Script\Main.cs" />
     <Compile Include="Assets\Script\Movement.cs" />
     <Compile Include="Assets\Script\OpenCloseCtlr.cs" />
-    <Compile Include="Assets\Splines\Bezier.cs" />
-    <Compile Include="Assets\Splines\BezierControlPointMode.cs" />
-    <Compile Include="Assets\Splines\BezierCurve.cs" />
-    <Compile Include="Assets\Splines\BezierSpline.cs" />
-    <Compile Include="Assets\Splines\Line.cs" />
-    <Compile Include="Assets\Splines\SplineDecorator.cs" />
-    <Compile Include="Assets\Splines\SplineWalker.cs" />
-    <Compile Include="Assets\Splines\SplineWalkerMode.cs" />
+    <Compile Include="Assets\Script\VoladorMovement.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
