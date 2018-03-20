@@ -6,7 +6,6 @@ public class VoladorMovement : MonoBehaviour {
 
     public int enemVel;
     //public int enemType; //0: terrestre, 1: Volador.
-	private Main mainScript;
 
 	void Start ()
     {
@@ -25,7 +24,7 @@ public class VoladorMovement : MonoBehaviour {
 
     void moveAlong()
     {
-            float step = enemVel * Time.deltaTime;
+            float move = enemVel * Time.deltaTime;
 
             Vector2 initialPos = transform.position;
             Vector2 finalPos = new Vector2(0.0f, 1.4f);
@@ -43,7 +42,8 @@ public class VoladorMovement : MonoBehaviour {
 
         Vector2 targetPos = initialPos + finalPos;
 
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, step);			
+            //transform.position = Vector3.MoveTowards(transform.position, targetPos, move);			
+		transform.position = initialPos + new Vector2(move,Mathf.Sin(move));
     }
 
 	void FixedUpdate()

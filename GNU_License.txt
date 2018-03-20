@@ -1,1 +1,0 @@
-Contains spline generator code from catlikecoding.com

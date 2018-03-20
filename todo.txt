@@ -1,8 +1,1 @@
- 
-Hay un NullReferenceException extraño al cual no le haré caso. No se por que aparece al destuir un enemigo al azar y no a otros.
-
-El NullReferenceException se eliminó al dejar a los enemigos en la misma capa en lugar de hacerlos "invisibles" al gato y luego visibles cuando llegan a la ventana.
-
-La barra de vida está practicamente lista pero presenta un detalle: Cuando se quiere calcular el porcentaje de energía total contra energía actual, devuelve un cero. Podría ser por que la energía es individual para cada ventana (Energía[i]) y habría que buscar el valor de energía apropiado para cada ventana...
-
-Considere aumentar la velocidad del salto del gatinsky. 
+Barras de vida independientes listas. Hay que arreglar detalle de como se reducen.

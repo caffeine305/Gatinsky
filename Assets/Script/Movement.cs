@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour {
 
     void Start(){
         moveSpeed = 12.0f;
-        jumpSpeed = 18.0f;
+        jumpSpeed = 36.0f;
         onGround = true;
         isJumping = false;
     }
@@ -48,7 +48,7 @@ public class Movement : MonoBehaviour {
 
         if (onGround == false)
         {
-            moveSpeed = 1.75f;
+            moveSpeed = 1.5f;
         }
         else
             moveSpeed = 12.0f;
