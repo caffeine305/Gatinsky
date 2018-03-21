@@ -1,1 +1,3 @@
-Barras de vida independientes listas. Hay que arreglar detalle de como se reducen.
+Barra correcta.
+Enemigos se acercan de manera correcta.
+Hay que hacer un script RandomSpawn (E Fasshol!)

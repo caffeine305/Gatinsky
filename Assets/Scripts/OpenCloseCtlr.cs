@@ -11,7 +11,7 @@ public class OpenCloseCtlr : MonoBehaviour {
 
     int maxHP = 1000;
     public int actualHP;
-    float healthBarPercnt;
+	float healthBarPercnt;
     //public GameObject healthBar;
 
     public bool isDanger; //Banderas. Permiten al programa conocer detalles sobre la ventana y así producir una acción a tono
@@ -34,9 +34,10 @@ public class OpenCloseCtlr : MonoBehaviour {
         collider = GetComponentInChildren<Collider2D>();
         //healthBar = GameObject.FindWithTag("HealthBar");
 
+
         //Inicializar variables y banderas.
         this.actualHP = maxHP;
-        healthBarPercnt = this.actualHP / 10.0f;
+		healthBarPercnt = (float)this.actualHP / (float)maxHP;
         this.isDanger = false;
         closeFunction();
         //Inicializando la lista de enemigos que tocan la ventana;
@@ -86,7 +87,7 @@ public class OpenCloseCtlr : MonoBehaviour {
     {
         this.isOpen = false;
         this.actualHP = this.maxHP;
-		healthBarPercnt = this.actualHP / 10.0f;
+		healthBarPercnt = 1.0f;
 		SetHealthBarSize(healthBarPercnt);
 
         //Manda a llamar animación de ventana cerrada
@@ -107,10 +108,11 @@ public class OpenCloseCtlr : MonoBehaviour {
                 this.actualHP = 0;
 
 			//reducir el tamaño de la barra de energía
-			healthBarPercnt = this.actualHP / 10.0f;
+			healthBarPercnt = (float)this.actualHP / (float)maxHP;
+			SetHealthBarSize(healthBarPercnt);
         }
 			
-        SetHealthBarSize(healthBarPercnt);
+
         //UpdateHealthBar(actualHP);
 
         //Si la energía llega a cero, abrir la ventana
@@ -130,7 +132,8 @@ public class OpenCloseCtlr : MonoBehaviour {
 		
     void SetHealthBarSize(float Percentage)
     {
-		healthBar.transform.localScale = new Vector3((Percentage/100) * healthBar.transform.localScale.x, healthBar.transform.localScale.y,healthBar.transform.localScale.z);
+		
+		healthBar.transform.localScale = new Vector3(Percentage, healthBar.transform.localScale.y,healthBar.transform.localScale.z);
     }
 
     void FixedUpdate()

@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour {
 
 	void Start ()
     {
-        enemVel = 7;
+        //enemVel = 7;
 
 		/*
 		GameObject LoadMainScript = GameObject.FindWithTag ("GameController");
