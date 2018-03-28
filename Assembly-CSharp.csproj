@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
      <Compile Include="Assets\Scripts\OpenCloseCtlr.cs" />
+     <Compile Include="Assets\Scripts\RandomSpawn.cs" />
      <Compile Include="Assets\Scripts\VoladorMovement.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
