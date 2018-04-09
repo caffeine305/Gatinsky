@@ -10,8 +10,14 @@ public class RandomSpawn : MonoBehaviour {
 	public float startWait;
 	public float waveWait;
 
+    public int score;
+    public GUIText scoreText;
+
 	void Start () {
-		StartCoroutine (SpawnEnemies ());
+
+        score = 0;
+        UpdateScore();
+        StartCoroutine (SpawnEnemies ());
 	}
 
 	IEnumerator SpawnEnemies ()	{
@@ -27,5 +33,16 @@ public class RandomSpawn : MonoBehaviour {
 			yield return new WaitForSeconds (waveWait);
 		}
 	}
+
+    public void AddScore(int newScoreValue)
+    {
+        score += newScoreValue;
+        UpdateScore();
+    }
+
+    void UpdateScore()
+    { 
+        scoreText.text = "Score: " + score;
+    }
 
 }

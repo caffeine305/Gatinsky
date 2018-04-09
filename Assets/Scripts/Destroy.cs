@@ -5,20 +5,33 @@ using System.Collections;
 public class Destroy : MonoBehaviour {
 
     public float vel;
-    public double valorScore;
+    public int valorScore;
     public int eliminado;
     public bool onPosition;
     public float positionY;
 
-
-    void Awake()
+    private RandomSpawn randomSpawn;
+
+    void Start()
     {
+        GameObject gameControllerObject = GameObject.FindWithTag("Spawner");
+        if (gameControllerObject != null)
+        {
+            randomSpawn = gameControllerObject.GetComponent<RandomSpawn>();
+        }
+        if (randomSpawn == null)
+        {
+            Debug.Log("No es posible encontrar el script 'RandomSpawn' ");
+
+        }
+
         valorScore = 100;
         eliminado = 0;
         vel = 10.0f;
         onPosition = false;
         positionY = transform.position.y;
         this.gameObject.layer = 10;
+
     }
 
 
@@ -61,12 +74,22 @@ public class Destroy : MonoBehaviour {
             this.gameObject.SetActive(false);
 
             //loadWave.sound();
-            //loadWave.SumarScore(valorScore);
             //loadWave.UpdateEliminados(eliminado);
             //loadWave.UpdateSpeed(vel);
+            randomSpawn.AddScore(valorScore);
             Destroy(this.transform.root.gameObject, 0.5f);
         }
-    }
+        if (other.gameObject.name == "Enemy")
+        {
+            this.gameObject.SetActive(false);
+
+            //loadWave.sound();
+            //loadWave.UpdateEliminados(eliminado);
+            //loadWave.UpdateSpeed(vel);
+            randomSpawn.AddScore(valorScore);
+            Destroy(this.transform.root.gameObject, 0.5f);
+        }
+    } 
 
 
 }
